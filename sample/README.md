@@ -22,6 +22,10 @@ To create a chef cookbook just run the following command. A cookbook comprises o
 berks cookbook sample
 ```
 
+## Vagrant boxes
+
+- https://atlas.hashicorp.com/boxes/search
+
 ## Vagrants Commands
 
 - vagrant up (starts the vm)
