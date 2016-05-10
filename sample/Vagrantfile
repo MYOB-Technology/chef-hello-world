@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.hostname = 'sample-phoeninx'
+  config.vm.hostname = 'sample'
 
   # Set the version of chef to install using the vagrant-omnibus plugin
   # NOTE: You will need to install the vagrant-omnibus plugin:
@@ -80,20 +80,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
-        fiddler: {
-            url: 'http://www.telerik.com/docs/default-source/fiddler/fiddler4setup.exe?sfvrsn=2',
-            checksum: '687dbc451521554a7b6c61332a484bf8b4e252228e66ab6bd2c1619203dd2a52',
-        },
-        sql_server: {
-            accept_eula: true,
-            server_sa_password: 'password',
-            version: '2008R2'
-        }
+
     }
 
     chef.run_list = [
         'recipe[sample::default]',
-        'recipe[sql_server::client]'
     ]
   end
 
