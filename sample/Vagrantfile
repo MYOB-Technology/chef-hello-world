@@ -12,6 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   config.vm.hostname = 'sample-berkshelf'
+  config.ssh.port = 2222
+  config.vm.network :forwarded_port, guest: 22, host: 2222
 
   # Set the version of chef to install using the vagrant-omnibus plugin
   # NOTE: You will need to install the vagrant-omnibus plugin:
@@ -25,7 +27,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   # If this value is a shorthand to a box in Vagrant Cloud then
   # config.vm.box_url doesn't need to be specified.
-  config.vm.box = 'chef/ubuntu-14.04'
+  #config.vm.box = 'chef/ubuntu-14.04'
+  config.vm.box = 'opentable/win-2012r2-standard-amd64-nocm'
+  config.vm.guest = :windows
 
 
   # Assign this VM to a host-only network IP, allowing you to access it
@@ -59,6 +63,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
+  config.vm.provider :virtualbox do |vb|
+    # Don't boot with headless mode
+    vb.gui = true
+    vb.memory = 2048
+    vb.cpus = 2
+    vb.customize ["modifyvm", :id, "--vram", "16"]
+  end
+
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
 
@@ -76,11 +88,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
-      mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
-      }
+
     }
 
     chef.run_list = [

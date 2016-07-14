@@ -1,3 +1,6 @@
 source "https://supermarket.chef.io"
 
 metadata
+
+cookbook 'windows', '>= 1.39.2'
+cookbook 'chrome', '~> 1.1.1'
