@@ -5,9 +5,11 @@ Sample cookbook
 
 ## Development environment setup
 
+- Install Virtualbox
+- Make sure you have a working git environment
 - Install vagrant (https://www.vagrantup.com/downloads.html)
-- Install the chef development kit
-- Click Chef Development Kit shortcut in your desktop
+- Install the chef development kit (https://packages.chef.io/stable/windows/2008r2/chefdk-0.12.0-1-x86.msi)
+- Click Chef Development Kit shortcut in your desktop and runthe commands bellow
 
 ```
 vagrant plugin install vagrant-berkshelf
@@ -40,44 +42,6 @@ Some examples can be found at
 
 - https://docs.chef.io/windows.html
 
-### Cookbooks
-
-- https://supermarket.chef.io/cookbooks/sql_server
-
-## Supported Platforms
-
-TODO: List your supported platforms.
-
-## Attributes
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['qa']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
-
-## Usage
-
-### sample::default
-
-Include `sample` in your node's `run_list`:
-
-```json
-{
-  "run_list": [
-    "recipe[sample::default]"
-  ]
-}
-```
 
 ## License and Authors
 
