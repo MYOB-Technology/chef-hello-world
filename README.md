@@ -17,6 +17,8 @@ vagrant plugin install vagrant-omnibus
 vagrant plugin install winrm
 ```
 
+## How to create a cookbook
+
 To create a chef cookbook just run the following command. A cookbook comprises of one or more recipes. You can even use cookbooks used by someone else. In this case, you just need to specify the cookbook in the berksfile. You can find more cookbooks in Chef supermarket website (https://supermarket.chef.io/).
 
 
