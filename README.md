@@ -7,7 +7,7 @@ Sample cookbook
 
 - Install Virtualbox
 - Make sure you have a working git environment
-- Install vagrant (https://www.vagrantup.com/downloads.html)
+- Install vagrant 1.8.1 Go to https://www.vagrantup.com/downloads.html and then navigate to archives
 - Install the chef development kit (https://packages.chef.io/stable/windows/2008r2/chefdk-0.12.0-1-x86.msi)
 - Click Chef Development Kit shortcut in your desktop and runthe commands bellow
 
