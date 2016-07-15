@@ -12,8 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   config.vm.hostname = 'sample-berkshelf'
-  config.ssh.port = 2222
-  config.vm.network :forwarded_port, guest: 22, host: 2222
+
 
   # Set the version of chef to install using the vagrant-omnibus plugin
   # NOTE: You will need to install the vagrant-omnibus plugin:
